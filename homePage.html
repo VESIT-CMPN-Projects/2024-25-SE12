@@ -3,9 +3,516 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Muskurate Raho</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .logo{
+            height: 70px;
+        }
+
+        .navbar {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: #0b5ed7;
+            font-size: 18px;
+        }
+        
+        .nav-link {
+            color: #333;
+            font-size: 14px;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+        
+        .donate-btn {
+            background-color: #ffc107;
+            color: #333;
+            border-radius: 5px;
+            padding: 5px 15px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .hero-section {
+            background-image: url('home_page_slider.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.98);
+            color: white;
+            padding: 100px 0 0;
+            position: relative;
+            margin-bottom: 0;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(27, 26, 26, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-left: 20px;
+        }
+        
+        .hero-title {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .btn-white {
+            background-color: white;
+            color: #333;
+            border-radius: 0;
+            padding: 6px 15px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .btn-play {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            border-radius: 0;
+            padding: 6px 15px;
+            font-size: 14px;
+        }
+        
+        .btn-play i {
+            margin-right: 5px;
+        }
+        
+        .stats-bar {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 0;
+            position: relative;
+            z-index: 2;
+            margin-top: 120px;
+        }
+        
+        .stats-bar p {
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+        
+        .section-divider {
+            width: 40px;
+            height: 2px;
+            background-color: #333;
+            margin-right: 15px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .section-label {
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            color: #555;
+            letter-spacing: 1px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .about-section {
+            padding: 60px 0;
+        }
+        
+        .about-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .about-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .learn-more-btn {
+            background-color: #ffc107;
+            color: #333;
+            border-radius: 5px;
+            padding: 6px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            font-weight: 600;
+        }
+        
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        .supporters-section {
+            padding: 30px 0 50px;
+        }
+        
+        .supporter-logo {
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .what-we-do-section {
+            background-color: #cce5ff;
+            padding: 60px 0;
+        }
+        
+        .what-we-do-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+        
+        .service-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .service-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .service-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .service-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .child-image {
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+        
+        .projects-section {
+            padding: 60px 0;
+        }
+        
+        .mobile-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .mobile-nav button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #555;
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .about-title, .what-we-do-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .stats-bar {
+                text-align: center;
+            }
+            
+            .stats-bar p:last-child {
+                margin-top: 5px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>This is Muskurate Raho's Website</h1>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <img src="logo.png" alt="logo" class="logo me-3">
+        <a class="navbar-brand" href="#">MUSKURATE RAHO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto me-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">What We Do</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Our Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+            <a href="#" class="donate-btn text-decoration-none">Donate</a>
+            <a href="#" class="ms-3">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTBzMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMiIvPjxwYXRoIGQ9Ik00LjI3MSAxOC4zNDZTNi41IDE1LjUgMTIgMTUuNXM3LjczIDIuODQ2IDcuNzMgMi44NDZNMTIgMTJhMyAzIDAgMSAwIDAtNmEzIDMgMCAwIDAgMCA2Ii8+PC9nPjwvc3ZnPg==" alt="User" class="rounded-circle">
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-6">
+                <div class="hero-content">
+                    <h1 class="hero-title">Crafting Bright<br>Tomorrows</h1>
+                    <div class="d-flex mt-4">
+                        <button class="btn btn-white me-3">What we do</button>
+                        <button class="btn btn-play">
+                            <i class="fas fa-play"></i> Play Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stats-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>230 children under our care</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>58 donations collected</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="mb-4">
+                    <span class="section-divider"></span>
+                    <span class="section-label">KNOW ABOUT US</span>
+                </div>
+                <h2 class="about-title">We are the changemakers<br>in the society</h2>
+                <p class="about-text">
+                    "Small acts, when multiplied by millions of people, can transform the world". Keeping 
+                    this thought in mind to make this world a better place to live in, Muskurate Raho was 
+                    founded on 28th February, 2021 by its Founder's Nishi Mishra and Roshan Shrivastav. 
+                    Muskurate Raho was created with the primary goal of sensitizing people about the 
+                    Environmental issues and promoting public welfare. In addition to beach cleanups 
+                    and plantation drives in extension, we are one of the few organizations to conduct 
+                    relief operations through digital platform, irrespective of caste, religion or creed (in 
+                    proper condition). Through project Pathshala we aim toward bright future of 
+                    underprivileged children with every stroke. We also visit orphanages often to bring 
+                    smile and joy in life of such innocent souls, as the organization's motto, "Keep 
+                    Smiling", suggests.
+                </p>
+                <button class="btn learn-more-btn">Learn more</button>
+            </div>
+            <div class="col-lg-5">
+                <div class="video-container">
+                    <img src="/api/placeholder/400/300" alt="About Video" class="img-fluid">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Supporters Section -->
+<section class="supporters-section">
+    <div class="container">
+        <div class="mb-4">
+            <span class="section-divider"></span>
+            <span class="section-label">OUR SUPPORTERS</span>
+        </div>
+        <div class="row">
+            <div class="col-4 col-md-2 supporter-logo">
+                <img src="/api/placeholder/100/40" alt="Logo 1" class="img-fluid">
+            </div>
+            <div class="col-4 col-md-2 supporter-logo">
+                <img src="/api/placeholder/100/40" alt="Logo 2" class="img-fluid">
+            </div>
+            <div class="col-4 col-md-2 supporter-logo">
+                <img src="/api/placeholder/100/40" alt="Logo 3" class="img-fluid">
+            </div>
+            <div class="col-4 col-md-2 supporter-logo">
+                <img src="/api/placeholder/100/40" alt="Logo 4" class="img-fluid">
+            </div>
+            <div class="col-4 col-md-2 supporter-logo">
+                <img src="/api/placeholder/100/40" alt="Logo 5" class="img-fluid">
+            </div>
+            <div class="col-4 col-md-2 supporter-logo">
+                <img src="/api/placeholder/100/40" alt="Logo 6" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What We Do Section -->
+<section class="what-we-do-section">
+    <div class="container">
+        <div class="mb-4">
+            <span class="section-divider"></span>
+            <span class="section-label">WHAT WE DO</span>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="what-we-do-title">We bring smile to lives &<br>our planet</h2>
+                
+                <div class="service-box">
+                    <div class="d-flex align-items-center">
+                        <div class="service-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                    </div>
+                    <h5 class="service-title">Sustainable Waste Management</h5>
+                    <p class="service-desc mb-0">
+                        We aim to solve open waste management, focusing mainly on reducing plastic waste by organizing weekly beach cleanup drive.
+                    </p>
+                </div>
+                
+                <div class="service-box">
+                    <div class="d-flex align-items-center">
+                        <div class="service-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                    <h5 class="service-title">Saving our Saviours</h5>
+                    <p class="service-desc mb-0">
+                        Plants don't need us, but we need them. We conduct plantation drive during monsoon season and restoration during rest of the season.
+                    </p>
+                </div>
+                
+                <div class="service-box">
+                    <div class="d-flex align-items-center">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                    </div>
+                    <h5 class="service-title">Crafting Bright Tomorrow's</h5>
+                    <p class="service-desc mb-0">
+                        Project Pathshala is a transformative initiative empowering underprivileged students through art and craft education.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 d-flex justify-content-center">
+                <div class="child-image">
+                    <img src="/api/placeholder/400/500" alt="Child looking up" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects-section">
+    <div class="container">
+        <div class="mb-4">
+            <span class="section-divider"></span>
+            <span class="section-label">PROJECTS WE HAVE DONE</span>
+        </div>
+        <!-- Projects Content would go here -->
+    </div>
+</section>
+
+<!-- Mobile Navigation Footer (visible only on small screens) -->
+<div class="d-md-none mobile-nav">
+    <button type="button">
+        <i class="fas fa-bars"></i>
+    </button>
+    <button type="button">
+        <i class="far fa-square"></i>
+    </button>
+    <button type="button">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
