@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentication Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+@section('title', 'Login Page')
+
+@section('styles')
         body {
             background-color: #f8f9fa;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
         .container {
@@ -21,7 +18,6 @@
         }
 
         .left-panel {
-            background: url('../../public/assets/images/loginImage.jpg') no-repeat center center;
             background-size: cover;
             display: flex;
             align-items: center;
@@ -47,7 +43,6 @@
             font-size: 25px;
             white-space: nowrap;
             background: rgb(255, 207, 63);
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
 
@@ -72,12 +67,14 @@
         #authTabs .nav-link {
             background-color: blue;
             color: white;
+            border-radius: 5px;
         }
 
         #authTabs .nav-link.active {
             background-color: white;
             color: blue;
             border: 1px solid blue;
+            border-radius: 5px;
         }
 
         .text-center {
@@ -88,21 +85,20 @@
         .text-center button {
             margin-right: 10px;
         }
-    </style>
-</head>
+@endsection
 
-<body>
+@section('content')
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-5 left-panel">
+            <div class="col-md-5 left-panel" style="background: url('{{ asset('assets/images/loginImage.jpg') }}') no-repeat center center;">
                 <h3>Be The Next Change Maker!</h3>
             </div>
             <div class="col-md-7 right-panel">
                 <h3 class="text-center">Be a part of Muskurate Raho!</h3>
                 <ul class="nav nav-tabs justify-content-center" id="authTabs">
-                    <li class="nav-item"><a class="nav-link active" id="login-tab" data-bs-toggle="tab"
+                    <li class="nav-item mb-3 mx-3"><a class="nav-link active" id="login-tab" data-bs-toggle="tab"
                             href="#login">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Sign
+                    <li class="nav-item mb-3"><a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Sign
                             up</a></li>
                 </ul>
                 <div class="tab-content mt-3">
@@ -159,8 +155,5 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+@endsection
+   
