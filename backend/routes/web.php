@@ -19,7 +19,3 @@ Route::get('/donateus', function () {
     return view('donateUs');
 });
 
-Route::get('/donateus', function () {
-    return view('donateUs');
-});
-
