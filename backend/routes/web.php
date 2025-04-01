@@ -9,3 +9,7 @@ Route::get('/login', function () {
 Route::get('/', function () {
     return view('homePage');
 });
+
+Route::get('/donateus', function () {
+    return view('donateUs');
+});
