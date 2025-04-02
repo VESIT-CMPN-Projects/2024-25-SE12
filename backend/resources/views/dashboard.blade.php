@@ -302,7 +302,7 @@
         <!-- User Profile at Bottom -->
         <div class="user-profile">
           <img
-            src="/Muskurate-Raho/backend/public/assets/images/woman.png"
+            src="{{ asset('assets/images/woman.png') }}"
             alt="User"
             class="user-avatar"
           />
@@ -355,7 +355,7 @@
               <div class="row d-flex align-items-center">
                 <div class="col-md-5">
                   <img
-                    src="/Muskurate-Raho/backend/public/assets/images/whatweDo-image3.png"
+                    src="{{ asset('assets/images/whatweDo-image3.png') }}"
                     alt="Beach Cleanup"
                     class="event-image"
                   />
@@ -385,7 +385,7 @@
             <h6 class="mb-3">List of volunteers</h6>
             <div class="mb-3 d-flex align-items-center">
               <img
-                src="/Muskurate-Raho/backend/public/assets/images/woman.png"
+                src="{{ asset('assets/images/woman.png') }}"
                 alt="Volunteer"
                 class="volunteer-avatar me-2"
               />
@@ -396,7 +396,7 @@
             </div>
             <div class="mb-3 d-flex align-items-center">
               <img
-                src="/Muskurate-Raho/backend/public/assets/images/man.jpeg"
+                src="{{ asset('assets/images/man.jpeg') }}"
                 alt="Volunteer"
                 class="volunteer-avatar me-2"
               />
@@ -407,7 +407,7 @@
             </div>
             <div class="mb-3 d-flex align-items-center">
               <img
-                src="/Muskurate-Raho/backend/public/assets/images/man.jpeg"
+                src="{{ asset('assets/images/man.jpeg') }}"
                 alt="Volunteer"
                 class="volunteer-avatar me-2"
               />
@@ -418,7 +418,7 @@
             </div>
             <div class="mb-3 d-flex align-items-center">
               <img
-                src="/Muskurate-Raho/backend/public/assets/images/woman.png"
+                src="{{ asset('assets/images/man.jpeg') }}"
                 alt="Volunteer"
                 class="volunteer-avatar me-2"
               />
