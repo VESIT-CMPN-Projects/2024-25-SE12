@@ -183,7 +183,6 @@
         }
           
         .social-icons a {
-            color: white;
             font-size: 20px;
             margin-right: 15px;
         }
@@ -214,7 +213,6 @@
 @include('layouts.navbar')
 
 <main>
-
     <!-- Contact Header Section -->
     <section class="contact-header">
         <div class="container">
@@ -254,42 +252,57 @@
             <div class="row">
                 <!-- Map Column -->
                 <div class="col-md-6">
-                    <!-- You can replace this with an actual Google Maps iframe -->
                     <div class="map-container" style="height: 400px; background-color: #e9ecef;">
-                        <!-- Replace with your Google Maps embed code -->
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1648026861468!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
                 
                 <!-- Form Column -->
                 <div class="col-md-6">
-                    <form class="contact-form mt-4 mt-md-0">
+                    <form method="POST" action="{{ route('contact.store') }}" class="contact-form mt-4 mt-md-0">
+                        @csrf  <!-- CSRF Token for security -->
+
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="form-label">First Name</label>
-                                <input type="text" class="form-control" placeholder="John">
+                                <input type="text" name="first_name" class="form-control" placeholder="Enter First Name" value="{{ old('first_name') }}">
+                                @error('first_name')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">Last Name</label>
-                                <input type="text" class="form-control" placeholder="Doe">
+                                <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name" value="{{ old('last_name') }}">
+                                @error('last_name')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                         </div>
                         
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="form-label">Email Id</label>
-                                <input type="email" class="form-control" placeholder="johndoe@gmail.com">
+                                <input type="email" name="email" class="form-control" placeholder="Enter Email" value="{{ old('email') }}">
+                                @error('email')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">Subject</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="subject" class="form-control" placeholder="Enter the Subject" value="{{ old('subject') }}">
+                                @error('subject')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                         </div>
                         
                         <div class="row">
                             <div class="col-12">
                                 <label class="form-label">Message</label>
-                                <textarea class="form-control" placeholder="Type your Message"></textarea>
+                                <textarea name="message" class="form-control" placeholder="Type your Message">{{ old('message') }}</textarea>
+                                @error('message')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                         </div>
                         
