@@ -36,3 +36,7 @@ Route::get('/donatenow', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
