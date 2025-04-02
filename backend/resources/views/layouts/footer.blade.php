@@ -11,10 +11,10 @@
                 <div class="col-md-2 footer-menu">
                     <h5>Home</h5>
                     <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">What we do</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="/team">Team</a></li>
+                        <li><a href="/whatwedo">What we do</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -22,9 +22,9 @@
                 <div class="col-md-2 footer-menu">
                     <h5>More</h5>
                     <ul>
-                        <li><a href="#">Projects</a></li>
+                        <li><a href="/projects">Projects</a></li>
                         <li><a href="#">Events</a></li>
-                        <li><a href="#">Donate</a></li>
+                        <li><a href="/donatenow">Donate</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
@@ -39,17 +39,17 @@
 
                     <!-- Social Icons -->
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/muskuraterahoorg/"><i class="fab fa-instagram"></i></a>
                         <span class="divider">•</span>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://x.com/muskuraterahorg/status/1841457441684222006"><i class="fab fa-twitter"></i></a>
                         <span class="divider">•</span>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/muskuraterahoorg/"><i class="fab fa-facebook"></i></a>
                         <span class="divider">•</span>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/@muskuraterahoorg"><i class="fab fa-youtube"></i></a>
                         <span class="divider">•</span>
                         <a href="#"><i class="fab fa-whatsapp"></i></a>
                         <span class="divider">•</span>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://in.linkedin.com/company/muskurateraho?trk=public_post_feed-actor-name"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
