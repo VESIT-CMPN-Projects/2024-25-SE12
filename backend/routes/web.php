@@ -37,3 +37,12 @@ Route::get('/donatenow', function () {
 // Handle login and signup
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
 
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+

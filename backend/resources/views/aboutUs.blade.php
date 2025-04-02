@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muskurate Raho Foundation</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <style>
+@section('title', 'About Us')
 
-    body {
+@section('styles')
+body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
   }
@@ -239,7 +231,7 @@
     }
 
     .cta-section {
-      background-image: url("pathshala3.jpg");
+      background-image: url("{{asset('assets/images/pathshala3.jpg')}}");
       background-size: cover;
       background-position: center;
       color: white;
@@ -383,44 +375,10 @@
       color: #fff;
       margin: 0 10px;
     }
-  </style>
-</head>
+    @endsection
 
-<body>
-  <header>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <img src="./assets/images/logo.png" alt="logo" class="logo me-3">
-            <a class="navbar-brand" href="#">MUSKURATE RAHO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto me-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">What We Do</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Our Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-                <a href="#" class="donate-btn text-decoration-none">Donate</a>
-                <a href="#" class="ms-3">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTBzMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMiIvPjxwYXRoIGQ9Ik00LjI3MSAxOC4zNDZTNi41IDE1LjUgMTIgMTUuNXM3LjczIDIuODQ2IDcuNzMgMi44NDZNMTIgMTJhMyAzIDAgMSAwIDAtNmEzIDMgMCAwIDAgMCA2Ii8+PC9nPjwvc3ZnPg==" alt="User" class="rounded-circle">
-                </a>
-            </div>
-        </div>
-    </nav>
+    @section('content')
+    @include('layouts.navbar')
     
   <main>
     <!-- Hero Section -->
@@ -445,7 +403,7 @@
             </p>
           </div>
           <div class="featured-vid mt-4 mt-lg-0 position-relative justify-content-center">
-            <video id="heroVideo" src="./assets/videos/8813228-uhd_2560_1440_25fps.mp4" class="img-fluid rounded mt-5"
+            <video id="heroVideo" src="{{asset('assets/videos/children.mp4')}}" class="img-fluid rounded mt-5"
               style="
                   width: 80%;
                   display: block;
@@ -593,7 +551,7 @@
           </div>
           <div class="col-lg-6">
             <div class="featured-image mt-4 mt-lg-0">
-              <img src="./assets/images/mr_group.jpg" alt="Impact image" class="img-fluid rounded" style="
+              <img src="{{asset('assets/images/mr_group.jpg')}}" alt="Impact image" class="img-fluid rounded" style="
                     width: 100%;
                     height: 100%;
                     display: block;
@@ -622,7 +580,7 @@
           <!-- Team Member 1 -->
           <div class="col-md-3 col-sm-6">
             <div class="team-card d-flex flex-column align-items-center p-3">
-              <img src="./assets/images/core_team_members/nishi.png" alt="Nishi Mishra" />
+              <img src="{{asset('assets/images/core_team_members/nishi.png')}}" alt="Nishi Mishra" />
               <div class="card-body">
                 <h5 class="card-title">Nishi Mishra</h5>
                 <p class="card-text">Founder</p>
@@ -638,7 +596,7 @@
           <!-- Team Member 2 -->
           <div class="col-md-3 col-sm-6">
             <div class="team-card d-flex flex-column align-items-center p-3">
-              <img src="./assets/images/core_team_members/roshan.jpg" alt="Roshan" />
+              <img src="{{asset('assets/images/core_team_members/roshan.jpg')}}" alt="Roshan" />
               <div class="card-body">
                 <h5 class="card-title">Roshan Shrivastav</h5>
                 <p class="card-text">Founder</p>
@@ -654,7 +612,7 @@
           <!-- Team Member 3 -->
           <div class="col-md-3 col-sm-6">
             <div class="team-card d-flex flex-column align-items-center p-3">
-              <img src="./assets/images/core_team_members/jaimin.png" alt="Jaimin " />
+              <img src="{{asset('assets/images/core_team_members/jaimin.png')}}" alt="Jaimin " />
               <div class="card-body">
                 <h5 class="card-title">Jaimin Solanki</h5>
                 <p class="card-text">Secretary</p>
@@ -670,7 +628,7 @@
           <!-- Team Member 4 -->
           <div class="col-md-3 col-sm-6">
             <div class="team-card d-flex flex-column align-items-center p-3">
-              <img src="./assets/images/core_team_members/akhil.png" alt="Adrian Dixon" />
+              <img src="{{asset('assets/images/core_team_members/akhil.png')}}" alt="Adrian Dixon" />
               <div class="card-body">
                 <h5 class="card-title">Akhlesh Jaiswal</h5>
                 <p class="card-text">Joint Secretary</p>
@@ -686,7 +644,7 @@
           <!-- Team Member 5 -->
           <div class="col-md-3 col-sm-6">
             <div class="team-card d-flex flex-column align-items-center p-3">
-              <img src="./assets/images/core_team_members/NirajMishra.png" alt="Niraj Mishra" />
+              <img src="{{asset('assets/images/core_team_members/NirajMishra.png')}}" alt="Niraj Mishra" />
               <div class="card-body">
                 <h5 class="card-title">Niraj Mishra</h5>
                 <p class="card-text">Treasurer</p>
@@ -702,7 +660,7 @@
           <!-- Team Member 6 -->
           <div class="col-md-3 col-sm-6">
             <div class="team-card d-flex flex-column align-items-center p-3">
-              <img src="./assets/images/core_team_members/kaustubh.png" alt="Kaustubh" />
+              <img src="{{asset('assets/images/core_team_members/kaustubh.png')}}" alt="Kaustubh" />
               <div class="card-body">
                 <h5 class="card-title">Kaustubh Shelar</h5>
                 <p class="card-text">Member</p>
@@ -719,165 +677,65 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="container py-5">
-      <div class="cta-section">
+<section class="container py-5">
+    <div class="cta-section">
         <div class="cta-content">
-          <h2 class="display-5 fw-bold mb-4">
-            Let's donate for betterment of our society and planet
-          </h2>
-          <div>
-            <button class="btn btn-warning btn-cta">
-              Join as a volunteer
-            </button>
-            <button class="btn btn-light btn-cta">Donate</button>
-          </div>
+            <h2 class="display-5 fw-bold mb-4">Let's donate for betterment of our society and planet</h2>
+            <div>
+                <button class="btn btn-warning btn-cta">Join as a volunteer</button>
+                <button class="btn btn-light btn-cta">Donate</button>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Events Section -->
-    <section class="container py-5">
-      <h2 class="event-heading fw-bold mb-4">Our Events</h2>
-
-      <div class="row g-4">
+<!-- Events Section -->
+<section class="container py-5">
+    <h2 class="event-heading fw-bold mb-4">Our Events</h2>
+    
+    <div class="row g-4">
         <!-- Event 1 -->
         <div class="col-md-6">
-          <div class="event-card">
-            <div class="d-flex">
-              <div class="me-4">
-                <div class="event-date">13</div>
-                <div class="event-month">APR</div>
-              </div>
-              <div>
-                <p class="small text-uppercase fw-bold mb-1">NEXT EVENTS</p>
-                <h3 class="event-title">A day with our wonderful children</h3>
-              </div>
+            <div class="event-card">
+                <div class="d-flex">
+                    <div class="me-4">
+                        <div class="event-date">13</div>
+                        <div class="event-month">APR</div>
+                    </div>
+                    <div>
+                        <p class="small text-uppercase fw-bold mb-1">NEXT EVENTS</p>
+                        <h3 class="event-title">A day with our wonderful children</h3>
+                    </div>
+                </div>
+                <div class="event-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
             </div>
-            <div class="event-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
         </div>
-
+        
         <!-- Event 2 -->
         <div class="col-md-6">
-          <div class="event-card">
-            <div class="d-flex">
-              <div class="me-4">
-                <div class="event-date">25</div>
-                <div class="event-month">APR</div>
-              </div>
-              <div>
-                <p class="small text-uppercase fw-bold mb-1">NEXT EVENTS</p>
-                <h3 class="event-title">
-                  Seminar: Caring for children with autism
-                </h3>
-              </div>
+            <div class="event-card">
+                <div class="d-flex">
+                    <div class="me-4">
+                        <div class="event-date">25</div>
+                        <div class="event-month">APR</div>
+                    </div>
+                    <div>
+                        <p class="small text-uppercase fw-bold mb-1">NEXT EVENTS</p>
+                        <h3 class="event-title">Seminar: Caring for children with autism</h3>
+                    </div>
+                </div>
+                <div class="event-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
             </div>
-            <div class="event-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <!-- Logo Column -->
-          <div class="col-md-3 logo-container">
-            <img src="./assets/images/logo.png" alt="Muskurate Raho" />
-          </div>
-
-          <!-- First Menu Column -->
-          <div class="col-md-2 footer-menu">
-            <h5>Home</h5>
-            <ul>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">What we do</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-
-          <!-- Second Menu Column -->
-          <div class="col-md-2 footer-menu">
-            <h5>More</h5>
-            <ul>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Donate</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </div>
-
-          <!-- Subscribe Column -->
-          <div class="col-md-5 subscribe-section">
-            <h5>Subscribe to get the Latest Updates</h5>
-            <div class="subscribe-form">
-              <input type="email" class="form-control" placeholder="Your email" />
-              <button class="btn btn-light ms-2">Subscribe</button>
-            </div>
-
-            <!-- Social Icons -->
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <span class="divider">•</span>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <span class="divider">•</span>
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <span class="divider">•</span>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-              <span class="divider">•</span>
-              <a href="#"><i class="fab fa-whatsapp"></i></a>
-              <span class="divider">•</span>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            Copyright © 2025 Muskurate Raho. All Rights Reserved ||
-            <a href="#" class="text-dark">Privacy Policy</a> ||
-            <a href="#" class="text-dark">Terms and Conditions</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const video = document.getElementById("heroVideo");
-      const playButton = document.getElementById("playButton");
-
-      playButton.addEventListener("click", function () {
-        if (video.paused) {
-          video.play();
-          playButton.style.opacity = 0; // Hide play button when video plays
-        } else {
-          video.pause();
-          playButton.style.opacity = 1;
-        }
-      });
-
-      // Shows play button again when video ends
-      video.addEventListener("ended", function () {
-        playButton.style.opacity = 1;
-      });
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+  @include('layouts.footer')
+  @include('layouts.aboutusScripts')
+  @endsection
