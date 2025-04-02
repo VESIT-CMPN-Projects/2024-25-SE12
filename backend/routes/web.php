@@ -7,7 +7,7 @@ use App\Http\Controllers\DonationController;
 
 Route::get('/', function () {
     return view('homePage');
-})->name('home'); // Added ->name('home')
+})->name('home');
 
 Route::get('/login', function () {
     return view('login');
@@ -20,7 +20,6 @@ Route::get('/team', function () {
 Route::get('/about', function () {
     return view('aboutUs');
 });
-
 
 Route::get('/donateus', function () {
     return view('donateUs');
@@ -37,12 +36,13 @@ Route::get('/projects', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
 Route::get('/donatenow', function () {
     return view('donateNow');
 });
+
 // Handle login and signup
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
-
 
 Route::get('/admin', function () {
     return view('admin');
@@ -51,6 +51,7 @@ Route::get('/admin', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
 // Admin route (no authentication)
 Route::get('/admin', [ContactController::class, 'index'])->name('admin');
 
@@ -59,6 +60,5 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/contact', function () {
     return view('contact');
 });
-
 
 Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
