@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DonationController;
 
 Route::get('/', function () {
     return view('homePage');
@@ -54,6 +56,5 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-use App\Http\Controllers\DonationController;
 
 Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
