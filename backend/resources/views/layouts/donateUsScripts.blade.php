@@ -1,50 +1,25 @@
 <script>
     // Form submission handler
-    document
-      .getElementById("submitDonation")
-      .addEventListener("click", function () {
-        const form = document.getElementById("donationForm");
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById("submitDonation").addEventListener("click", function () {
+            const form = document.getElementById("donationForm");
 
-        // Check form validity
-        if (!form.checkValidity()) {
-          form.reportValidity();
-          return;
-        }
-        
-        // Here you would normally send the form data to your server
-        // using fetch API or another method
-        // For example:
-        /*
-        const formData = new FormData(form);
-        fetch('/api/donations', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Handle success
-        })
-        .catch(error => {
-            // Handle error
-        });
-        */
-
-        // Close the modal
-        const modal = bootstrap.Modal.getInstance(
-          document.getElementById("donationModal")
-        );
-        modal.hide();
-
-        // Show thank you message
-        document.getElementById("thankYouMessage").style.display =
-          "block";
-
-        // Scroll to thank you message
-        document.getElementById("thankYouMessage").scrollIntoView({
-          behavior: "smooth",
+            // Check form validity
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            // Submit the form to the controller
+            form.submit();
         });
 
-        // Reset the form
-        form.reset();
-      });
-  </script>
+        // If there's a success message, display the thank you container
+        @if(session('success'))
+            document.getElementById("thankYouMessage").style.display = "block";
+            document.getElementById("thankYouMessage").scrollIntoView({
+                behavior: "smooth",
+            });
+        @endif
+    });
+</script>

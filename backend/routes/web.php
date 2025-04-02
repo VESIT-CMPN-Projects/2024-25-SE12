@@ -53,3 +53,7 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/contact', function () {
     return view('contact');
 });
+
+use App\Http\Controllers\DonationController;
+
+Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');

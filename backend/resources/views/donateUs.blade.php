@@ -288,6 +288,13 @@
               </table>
             </div>
             
+            <!-- Display success message if redirect with success -->
+            @if(session('success'))
+              <div class="alert alert-success">
+                {{ session('success') }}
+              </div>
+            @endif
+            
             <div id="thankYouMessage" class="thank-you-container">
               <i class="fas fa-heart"></i>
               <h3>Your Generosity Makes a Difference!</h3>
@@ -328,49 +335,50 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="donationForm">
+          <form id="donationForm" action="{{ route('donate.store') }}" method="POST">
+          @csrf
             <div class="row mb-3">
               <div class="col-md-6 mb-3 mb-md-0">
                 <label for="fullName" class="form-label">Full Name *</label>
-                <input type="text" class="form-control" id="fullName" required />
+                <input type="text" class="form-control" id="fullName" name="full_name" required />
               </div>
               <div class="col-md-6">
                 <label for="email" class="form-label">Email Address *</label>
-                <input type="email" class="form-control" id="email" required />
+                <input type="email" class="form-control" id="email" name="email" required />
               </div>
             </div>
             
             <div class="row mb-3">
               <div class="col-md-6 mb-3 mb-md-0">
                 <label for="phone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" />
+                <input type="tel" class="form-control" id="phone" name="phone" />
               </div>
               <div class="col-md-6">
                 <label for="location" class="form-label">Location/City *</label>
-                <input type="text" class="form-control" id="location" required />
+                <input type="text" class="form-control" id="location" name="location" required />
               </div>
             </div>
             
             <div class="mb-3">
               <label for="amount" class="form-label">Donation Amount (₹) *</label>
-              <input type="number" class="form-control" id="amount" min="1" required />
+              <input type="number" class="form-control" id="amount" name="amount" min="1" required />
             </div>
             
             <div class="mb-3">
               <label for="transactionId" class="form-label">Transaction ID/Reference Number</label>
-              <input type="text" class="form-control" id="transactionId" />
+              <input type="text" class="form-control" id="transactionId" name="transaction_id" />
               <small class="text-muted">If you've already made the transfer, please
                 add the transaction reference</small>
             </div>
             
             <div class="mb-3">
               <label for="message" class="form-label">Message (Optional)</label>
-              <textarea class="form-control" id="message" rows="3"
+              <textarea class="form-control" id="message" name="message" rows="3"
               placeholder="Tell us why you're supporting our cause..."></textarea>
             </div>
             
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="anonymous" />
+              <input type="checkbox" class="form-check-input" id="anonymous" name="is_anonymous" />
               <label class="form-check-label" for="anonymous">Make this donation anonymous</label>
             </div>
           </form>
