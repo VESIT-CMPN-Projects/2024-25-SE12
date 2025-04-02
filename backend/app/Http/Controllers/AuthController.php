@@ -37,11 +37,13 @@ class AuthController extends Controller
                 'password' => 'required|min:6',
             ]);
 
+            // Force redirection to home, even if authentication fails
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
                 return redirect()->route('home')->with('success', 'Login successful!');
+            } else {
+                return redirect()->route('home')->with('error', 'Login failed, but redirected to home.'); //added else statement to always redirect.
             }
 
-            return back()->withErrors(['email' => 'Invalid email or password.']);
         }
     }
 }
