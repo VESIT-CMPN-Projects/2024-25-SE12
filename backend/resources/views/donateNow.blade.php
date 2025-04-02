@@ -1,4 +1,4 @@
-extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Donate Page')
 
@@ -126,7 +126,7 @@ extends('layouts.app')
 }
 
 .cta-section {
-    background-image: url('pathshala3.jpg');
+    background-image: url('{{ asset ('assets/images/pathshala3.jpg')}}');
     background-size: cover;
     background-position: center;
     color: white;
@@ -296,7 +296,7 @@ extends('layouts.app')
                         <button class="btn donate-btn2">Donate now</button>
                     </div>
                     <div class="col-md-6">
-                        <img src="Donatepage-image1.png" alt="Donation Box" class="img-fluid rounded-img">
+                        <img src="{{ asset ('assets/images/Donatepage-image1.png')}}" alt="Donation Box" class="img-fluid rounded-img">
                     </div>
                 </div>
             </div>

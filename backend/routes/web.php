@@ -19,3 +19,17 @@ Route::get('/donateus', function () {
     return view('donateUs');
 });
 
+Route::get('/whatwedo', function () {
+    return view('whatWeDo');
+});
+
+Route::get('/projects', function () {
+    return view('projects');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/donatenow', function () {
+    return view('donateNow');
+});
