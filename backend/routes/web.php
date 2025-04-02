@@ -33,3 +33,6 @@ Route::get('/contact', function () {
 Route::get('/donatenow', function () {
     return view('donateNow');
 });
+Route::get('/admin', function () {
+    return view('admin');
+});
