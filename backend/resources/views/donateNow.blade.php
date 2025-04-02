@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate</title>
+@section('title', 'Donate Page')
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
+@section('styles')
+    body {
     font-family: 'Roboto', sans-serif;
     background-color: white;
     margin: 0;
@@ -132,7 +126,7 @@
 }
 
 .cta-section {
-    background-image: url('pathshala3.jpg');
+    background-image: url('{{ asset ('assets/images/pathshala3.jpg')}}');
     background-size: cover;
     background-position: center;
     color: white;
@@ -282,44 +276,11 @@
         font-size: 28px;
     }
 }
-    </style>
-</head>
+@endsection
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <img src="logo.png" alt="logo" class="logo me-3">
-                <a class="navbar-brand" href="#">MUSKURATE RAHO</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto me-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">What We Do</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Our Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                    <a href="#" class="donate-btn text-decoration-none">Donate</a>
-                    <a href="#" class="ms-3">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTBzMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMiIvPjxwYXRoIGQ9Ik00LjI3MSAxOC4zNDZTNi41IDE1LjUgMTIgMTUuNXM3LjczIDIuODQ2IDcuNzMgMi44NDZNMTIgMTJhMyAzIDAgMSAwIDAtNmEzIDMgMCAwIDAgMCA2Ii8+PC9nPjwvc3ZnPg==" alt="User" class="rounded-circle">
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
+@section('content')
+@include('layouts.navbar')
+
     <main>
         <div class="container-fluid hero-section">
             <div class="container">
@@ -335,7 +296,7 @@
                         <button class="btn donate-btn2">Donate now</button>
                     </div>
                     <div class="col-md-6">
-                        <img src="Donatepage-image1.png" alt="Donation Box" class="img-fluid rounded-img">
+                        <img src="{{ asset ('assets/images/Donatepage-image1.png')}}" alt="Donation Box" class="img-fluid rounded-img">
                     </div>
                 </div>
             </div>
@@ -412,72 +373,6 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 logo-container">
-                        <img src="logo.png" alt="Muskurate Raho" />
-                    </div>
 
-                    <div class="col-md-2 footer-menu">
-                        <h5>Home</h5>
-                        <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">What we do</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-2 footer-menu">
-                        <h5>More</h5>
-                        <ul>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">Donate</a></li>
-                            <li><a href="#">Blog</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-5 subscribe-section">
-                        <h5>Subscribe to get the Latest Updates</h5>
-                        <div class="subscribe-form">
-                            <input type="email" class="form-control" placeholder="Your email" />
-                            <button class="btn btn-light ms-2">Subscribe</button>
-                        </div>
-
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <span class="divider">•</span>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <span class="divider">•</span>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <span class="divider">•</span>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                            <span class="divider">•</span>
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
-                            <span class="divider">•</span>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        Copyright © 2025 Muskurate Raho. All Rights Reserved ||
-                        <a href="#" class="text-dark">Privacy Policy</a> ||
-                        <a href="#" class="text-dark">Terms and Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+    @include('layouts.footer')  
+    @endsection
