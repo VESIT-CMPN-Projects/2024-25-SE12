@@ -263,7 +263,7 @@
           <div class="col-md-7 mx-auto mb-4">
             <div class="bank-details mb-4">
               <div class="bank-header">
-                <img src="{{ asset('assets/images/bankLogo.png')}}" alt="Bank Logo" width="50" height="60"/>
+                <img src="{{ asset('assets/images/bankLogo.jpg')}}" alt="Bank Logo" width="50" height="60"/>
                 THE PRATAP CO-OPERATIVE BANK LTD
               </div>
               <table class="bank-table table table-striped">

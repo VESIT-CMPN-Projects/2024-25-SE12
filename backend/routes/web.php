@@ -1,10 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('homePage');
+});
+
+Route::get('/login', function () {
+    return view('login');
 });
 
 Route::get('/team', function () {
@@ -34,4 +39,7 @@ Route::get('/contact', function () {
 
 Route::get('/donatenow', function () {
     return view('donateNow');
+});
+Route::get('/admin', function () {
+    return view('admin');
 });
