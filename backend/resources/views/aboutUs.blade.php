@@ -231,7 +231,7 @@ body {
     }
 
     .cta-section {
-      background-image: url("pathshala3.jpg");
+      background-image: url("{{asset('assets/images/pathshala3.jpg')}}");
       background-size: cover;
       background-position: center;
       color: white;
@@ -677,68 +677,63 @@ body {
     </section>
 
     <!-- CTA Section -->
-    <section class="container py-5">
-      <div class="cta-section">
+<section class="container py-5">
+    <div class="cta-section">
         <div class="cta-content">
-          <h2 class="display-5 fw-bold mb-4">
-            Let's donate for betterment of our society and planet
-          </h2>
-          <div>
-            <button class="btn btn-warning btn-cta">
-              Join as a volunteer
-            </button>
-            <button class="btn btn-light btn-cta">Donate</button>
-          </div>
+            <h2 class="display-5 fw-bold mb-4">Let's donate for betterment of our society and planet</h2>
+            <div>
+                <button class="btn btn-warning btn-cta">Join as a volunteer</button>
+                <button class="btn btn-light btn-cta">Donate</button>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Events Section -->
-    <section class="container py-5">
-      <h2 class="event-heading fw-bold mb-4">Our Events</h2>
-
-      <div class="row g-4">
+<!-- Events Section -->
+<section class="container py-5">
+    <h2 class="event-heading fw-bold mb-4">Our Events</h2>
+    
+    <div class="row g-4">
         <!-- Event 1 -->
         <div class="col-md-6">
-          <div class="event-card">
-            <div class="d-flex">
-              <div class="me-4">
-                <div class="event-date">13</div>
-                <div class="event-month">APR</div>
-              </div>
-              <div>
-                <p class="small text-uppercase fw-bold mb-1">NEXT EVENTS</p>
-                <h3 class="event-title">A day with our wonderful children</h3>
-              </div>
+            <div class="event-card">
+                <div class="d-flex">
+                    <div class="me-4">
+                        <div class="event-date">13</div>
+                        <div class="event-month">APR</div>
+                    </div>
+                    <div>
+                        <p class="small text-uppercase fw-bold mb-1">NEXT EVENTS</p>
+                        <h3 class="event-title">A day with our wonderful children</h3>
+                    </div>
+                </div>
+                <div class="event-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
             </div>
-            <div class="event-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
         </div>
-
+        
         <!-- Event 2 -->
         <div class="col-md-6">
-          <div class="event-card">
-            <div class="d-flex">
-              <div class="me-4">
-                <div class="event-date">25</div>
-                <div class="event-month">APR</div>
-              </div>
-              <div>
-                <p class="small text-uppercase fw-bold mb-1">NEXT EVENTS</p>
-                <h3 class="event-title">
-                  Seminar: Caring for children with autism
-                </h3>
-              </div>
+            <div class="event-card">
+                <div class="d-flex">
+                    <div class="me-4">
+                        <div class="event-date">25</div>
+                        <div class="event-month">APR</div>
+                    </div>
+                    <div>
+                        <p class="small text-uppercase fw-bold mb-1">NEXT EVENTS</p>
+                        <h3 class="event-title">Seminar: Caring for children with autism</h3>
+                    </div>
+                </div>
+                <div class="event-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
             </div>
-            <div class="event-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
   </main>
 
   @include('layouts.footer')
