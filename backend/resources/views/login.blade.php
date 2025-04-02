@@ -45,7 +45,6 @@
             background: rgb(255, 207, 63);
         }
 
-
         .right-panel {
             padding: 30px;
         }
@@ -85,6 +84,11 @@
         .text-center button {
             margin-right: 10px;
         }
+
+        .role-checkbox {
+            margin-top: 10px;
+            font-weight: bold;
+        }
 @endsection
 
 @section('content')
@@ -96,48 +100,65 @@
             <div class="col-md-7 right-panel">
                 <h3 class="text-center">Be a part of Muskurate Raho!</h3>
                 <ul class="nav nav-tabs justify-content-center" id="authTabs">
-                    <li class="nav-item mb-3 mx-3"><a class="nav-link active" id="login-tab" data-bs-toggle="tab"
-                            href="#login">Login</a></li>
-                    <li class="nav-item mb-3"><a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Sign
-                            up</a></li>
+                    <li class="nav-item mb-3 mx-3">
+                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Login</a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Sign up</a>
+                    </li>
                 </ul>
                 <div class="tab-content mt-3">
                     <!-- Login Form -->
                     <div class="tab-pane fade show active" id="login">
-                        <form>
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <input type="hidden" name="action" value="login"> 
                             <div class="mb-3">
-                                <label class="form-label w-100">Email</label>
-                                <input type="email" class="form-control" placeholder="Enter your email">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Password</label>
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                            </div>
+                            <div class="mb-3 role-checkbox">
+                                <label>Are you:</label>
+                                <input type="radio" name="role" value="admin" required> Admin
+                                <input type="radio" name="role" value="user" required> User
                             </div>
                             <button type="submit" class="btn btn-warning w-100 auth-btn">Login</button>
                         </form>
                     </div>
+
                     <!-- Signup Form -->
                     <div class="tab-pane fade" id="signup">
-                        <form>
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <input type="hidden" name="action" value="signup"> 
                             <div class="mb-3">
                                 <label class="form-label">Name</label>
-                                <input type="text" class="form-control" placeholder="Enter your name">
+                                <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Username</label>
-                                <input type="email" class="form-control" placeholder="Enter your email">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Create Password</label>
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" class="form-control" placeholder="Password" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" placeholder="Confirm Password">
+                                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input">
+                                <input type="checkbox" class="form-check-input" required>
                                 <label class="form-check-label">I agree to terms and conditions</label>
+                            </div>
+                            <div class="mb-3 role-checkbox">
+                                <label>Are you:</label>
+                                <input type="radio" name="role" value="admin" required> Admin
+                                <input type="radio" name="role" value="user" required> User
                             </div>
                             <button type="submit" class="btn btn-warning w-100 auth-btn">Sign up</button>
                         </form>
@@ -145,15 +166,11 @@
                 </div>
                 <p class="text-center mt-3">Sign in With</p>
                 <div class="text-center">
-                    <button class="btn btn-light"><img
-                            src="https://img.icons8.com/color/24/000000/facebook-new.png" /></button>
-                    <button class="btn btn-light"><img
-                            src="https://img.icons8.com/color/24/000000/google-logo.png" /></button>
-                    <button class="btn btn-light"><img
-                            src="https://img.icons8.com/ios-filled/24/000000/mac-os.png" /></button>
+                    <button class="btn btn-light"><img src="https://img.icons8.com/color/24/000000/facebook-new.png" /></button>
+                    <button class="btn btn-light"><img src="https://img.icons8.com/color/24/000000/google-logo.png" /></button>
+                    <button class="btn btn-light"><img src="https://img.icons8.com/ios-filled/24/000000/mac-os.png" /></button>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-   

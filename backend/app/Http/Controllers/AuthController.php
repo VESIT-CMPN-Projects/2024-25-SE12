@@ -5,42 +5,43 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     public function authenticate(Request $request)
     {
-        // Determine if this is a login or signup request
-        if ($request->has('signup')) {
+        if ($request->input('action') === 'signup') {
             // Signup Logic
             $request->validate([
                 'name' => 'required|string|max:255',
-                'email' => 'required|email|unique:users,email',
-                'password' => 'required|string|min:8|confirmed',
-                'terms' => 'accepted',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:6|confirmed',
+                'role' => 'required|in:admin,user', // Validate the role
+                'terms' => 'required|accepted', // Validate terms checkbox
+            ], [
+                'terms.accepted' => 'You must accept the terms and conditions.',
             ]);
 
-            $user = User::create([
+            User::create([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => Hash::make($request->password),
+                'password' => $request->password, //password will be hashed by model mutator.
+                'role' => $request->role,
             ]);
 
-            Auth::login($user); // Automatically log in the user after signup
+            return redirect()->route('login')->with('success', 'Account created successfully! Please log in.');
         } else {
             // Login Logic
             $request->validate([
                 'email' => 'required|email',
-                'password' => 'required'
+                'password' => 'required|min:6',
             ]);
 
-            if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-                return back()->withErrors(['email' => 'Invalid credentials.']);
+            if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+                return redirect()->route('home')->with('success', 'Login successful!');
             }
-        }
 
-        // Redirect to homepage after login or signup
-        return redirect()->route('home');
+            return back()->withErrors(['email' => 'Invalid email or password.']);
+        }
     }
 }
