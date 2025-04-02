@@ -2,11 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('homePage');
-});
+})->name('home'); // Added ->name('home')
 
 Route::get('/login', function () {
     return view('login');
@@ -15,6 +14,7 @@ Route::get('/login', function () {
 Route::get('/team', function () {
     return view('ourTeam');
 });
+
 
 Route::get('/donateus', function () {
     return view('donateUs');
@@ -28,6 +28,23 @@ Route::get('/projects', function () {
     return view('projects');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/donatenow', function () {
+    return view('donateNow');
+});
+// Handle login and signup
+Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
+
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 // Admin route (no authentication)
 Route::get('/admin', [ContactController::class, 'index'])->name('admin');
 
@@ -35,11 +52,4 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 
 Route::get('/contact', function () {
     return view('contact');
-});
-
-Route::get('/donatenow', function () {
-    return view('donateNow');
-});
-Route::get('/admin', function () {
-    return view('admin');
 });
