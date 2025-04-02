@@ -17,6 +17,10 @@ Route::get('/team', function () {
     return view('ourTeam');
 });
 
+Route::get('/about', function () {
+    return view('aboutUs');
+});
+
 
 Route::get('/donateus', function () {
     return view('donateUs');
