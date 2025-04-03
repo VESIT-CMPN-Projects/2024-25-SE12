@@ -62,3 +62,9 @@ Route::get('/contact', function () {
 });
 
 Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
+
+Route::get('/admin', function () {
+    $donations = Donation::latest()->get();
+    $contacts = Contact::latest()->get();
+    return view('admin', compact('donations', 'contacts'));
+});
