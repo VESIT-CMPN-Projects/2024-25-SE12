@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonationController;
+use App\Models\Donation;
+use App\Models\Contact;
+
 
 Route::get('/', function () {
     return view('homePage');
@@ -68,3 +71,5 @@ Route::get('/admin', function () {
     $contacts = Contact::latest()->get();
     return view('admin', compact('donations', 'contacts'));
 });
+
+

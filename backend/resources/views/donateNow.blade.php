@@ -93,6 +93,11 @@
     margin-top: 20px;
 }
 
+.donate-btntxt {
+    text-decoration:none;
+}
+
+
 /* Active Tab Style */
 .nav-tabs .nav-link.active {
     border-bottom: 3px solid rgba(242, 201, 76, 1);
@@ -293,7 +298,8 @@
                         <h2 class="fw-bold mt-2">Making a donation for our <br> children.</h2>
                         <p class="text-justify">When you donate, you're supporting effective care to children with special
                             needs—an investment in the leaders of tomorrow.</p>
-                        <button class="btn donate-btn2">Donate now</button>
+                        <button class="btn donate-btn2 "><a href = "/donateus" class="donate-btntxt">Donate now</a></button>
+                        
                     </div>
                     <div class="col-md-6">
                         <img src="{{ asset ('assets/images/Donatepage-image1.png')}}" alt="Donation Box" class="img-fluid rounded-img">
@@ -367,7 +373,7 @@
                     <h2 class="display-5 fw-bold mb-4">Let's donate for betterment of our society and planet</h2>
                     <div>
                         <button class="btn btn-warning btn-cta">Join as a volunteer</button>
-                        <button class="btn btn-light btn-cta">Donate</button>
+                        <button class="btn btn-light btn-cta ">Donate</button>
                     </div>
                 </div>
             </div>

@@ -1,239 +1,248 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us')
+@section('title', 'Admin')
 
 @section('styles')
     
     body {
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  color: #333;
+}
 
-    .logo {
-      height: 70px;
-    }
 
-    .navbar {
-      background-color: #fff;
-      padding: 15px 0;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-
-    .navbar-brand {
-      font-weight: bold;
-      color: #0b5ed7;
-      font-size: 18px;
-    }
-
-    .nav-link {
-      color: #333;
-      font-size: 15px;
-      margin-right: 10px;
-      font-weight: 600;
-    }
-
-    .donate-btn {
-      background-color: #fef577;
-      color: #333;
-      border-radius: 5px;
-      padding: 5px 15px;
-      font-size: 15px;
-      font-weight: 600;
-      border: solid 1px #a79d0d;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-    }
-
-    .sidebar {
-      background-color: #c8daf8;
-      /* Light blue */
-      width: 200px;
-      min-width: 200px;
-      position: relative;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding-top: 20px;
-      padding-bottom: 70px;
-      /* Space for user profile */
-    }
-
-    @media (max-width: 768px) {
-      .sidebar {
-        display: none;
+/* HEADER STYLES */
+      .logo {
+        height: 50px;
       }
-    }
 
-    .sidebar a {
-      padding: 10px 15px;
-      text-decoration: none;
-      font-size: 16px;
-      color: black;
-      display: block;
-    }
-
-    .sidebar a:hover {
-      background-color: #f1f1f1;
-      /* Light gray for hover */
-    }
-
-    /* Main content styling */
-    .content {
-      flex-grow: 1;
-      padding: 20px;
-    }
-
-    .card {
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    .card h4 {
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .card p {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .card.bg-primary {
-      background-color: #0b5ed7;
-      /* Blue */
-    }
-
-    .card.bg-success {
-      background-color: #28a745;
-      /* Green */
-    }
-
-    .card.bg-warning {
-      background-color: #ffc107;
-      /* Yellow */
-      color: #fff;
-    }
-
-    .table-striped tbody tr:nth-of-type(odd) {
-      background-color: #f9f9f9;
-      /* Light gray for table rows */
-    }
-
-    .table-striped tbody tr:hover {
-      background-color: #f1f1f1;
-      /* Light gray on hover */
-    }
-
-    /* Modal styling */
-    .modal-content {
-      border-radius: 8px;
-    }
-
-    .modal-header {
-      background-color: #fef577;
-      /* Yellow header for emphasis */
-    }
-
-    .modal-title {
-      font-weight: 600;
-      color: #333;
-    }
-
-    .modal-body input {
-      border-radius: 5px;
-    }
-
-    .modal-footer .btn {
-      font-weight: 600;
-      border-radius: 5px;
-    }
-
-    .footer-top {
-      background-color: #000;
-      color: white;
-      padding: 40px 0;
-    }
-
-    .footer-bottom {
-      background-color: #fef577;
-      color: #000;
-      padding: 10px 0;
-      font-size: 14px;
-    }
-
-    .logo-container img {
-      width: 150px;
-      height: 150px;
-      border-radius: 10px;
-    }
-
-    .footer-menu h5 {
-      font-size: 18px;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .footer-menu ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .footer-menu ul li {
-      margin-bottom: 8px;
-    }
-
-    .footer-menu ul li a {
-      color: var(--light-text);
-      text-decoration: none;
-    }
-
-    .footer-menu ul li a:hover {
-      text-decoration: underline;
-    }
-
-    .subscribe-section h5 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-
-    .subscribe-form {
-      display: flex;
-    }
-
-    .subscribe-form input {
-      border: 1px solid #4f4d4d;
-      color: white;
-    }
-
-    .social-icons {
-      margin-top: 20px;
-    }
-
-    .social-icons a {
-      color: white;
-      font-size: 20px;
-      margin-right: 15px;
-    }
-
-    .contact-query{
-        margin-top:30px;
-    }
-
-    .main-content {
-      background-color: #f8f9fa;
-      min-height: calc(100vh - 70px - 300px);
-    }
-
-    @media (max-width: 992px) {
-      .sidebar {
-        min-height: auto;
-        border-right: none;
+      .navbar {
+        background-color: #fff;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       }
-    }
+
+      .navbar-brand {
+        font-weight: bold;
+        color: #0b5ed7;
+        font-size: 18px;
+      }
+
+      .nav-link {
+        color: #333;
+        font-size: 15px;
+        margin-right: 10px;
+        font-weight: 600;
+      }
+
+      .donate-btn {
+        background-color: #fef577;
+        color: #333;
+        border-radius: 5px;
+        padding: 5px 15px;
+        font-size: 15px;
+        font-weight: 600;
+        border: solid 1px #a79d0d;
+      }
+/* Main Layout */
+main {
+  flex: 1;
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #d5e7ff; /* Lightened Blue */
+  width: 220px;
+  min-width: 220px;
+  position: relative;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 15px;
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+}
+
+.sidebar a:hover {
+  background-color: #bdd5f8; /* Softer hover */
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Content Section */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Cards */
+.card {
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.bg-primary {
+  background-color: #5390d9; /* Softer Blue */
+}
+
+.bg-success {
+  background-color: #28a745;
+}
+
+.bg-warning {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+/* Tables */
+.table {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #5390d9; /* Light Blue Header */
+  color: white;
+  padding: 12px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  background-color: #fef577;
+}
+
+.modal-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-footer .btn {
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.footer-top {
+    background-color: #000;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-bottom {
+    background-color: #fef577;
+    color: #000;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.logo-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.footer-menu h5 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-menu ul li {
+    margin-bottom: 8px;
+}
+
+.footer-menu ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.subscribe-section h5 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.subscribe-form {
+    display: flex;
+}
+
+.subscribe-form input {
+    border: 1px solid #4f4d4d;
+    color: white;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+
+/* Contact Query */
+.contact-query {
+  margin-top: 30px;
+}
+
+/* Donations Chart */
+#donationsChart {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
  @endsection
 
 @section('content')
@@ -250,7 +259,7 @@
         <div class="content">
 
             <div class="alert alert-info">
-                <strong>New Donation:</strong> $200 received from Jane Doe!
+                <strong>Alert:</strong> New Donation Recieved !!!
             </div>
 
             <div class="row">
@@ -287,29 +296,30 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Donor Name</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Location</th>
                         <th>Amount</th>
-                        <th>Date</th>
+                        <th>Transaction_ID</th>
+                        <th>Message</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Jane Doe</td>
-                        <td>$200</td>
-                        <td>2025-04-02</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>John Smith</td>
-                        <td>$500</td>
-                        <td>2025-04-01</td>
-                    </tr>
+                @foreach ($donations as $donation)
+                        <tr>
+                            <td>{{ $donation->full_name }}</td>
+                            <td>{{ $donation->email }}</td>
+                            <td>{{ $donation->phone }}</td>
+                            <td>{{ $donation-> location}}</td>
+                            <td>{{ $donation->amount }}</td>
+                            <td>{{ $donation-> transaction_id}}</td>
+                            <td>{{ $donation-> message}}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
 
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewMore">View More</button>
 
             <div class="contact-query">
             <h3>Contact Queries</h3>
@@ -339,23 +349,7 @@
             </table>
             </div>
         </div>
-
-        <script>
-            // Donations Chart
-            const ctx = document.getElementById('donationsChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-                    datasets: [{
-                        label: 'Donations ($)',
-                        data: [500, 1000, 1500, 2000, 2500],
-                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                    }]
-                }
-            });
-        </script>
     </main>
 @include('layouts.footer')
-@include('layouts.homeScripts')
+@include('layouts.adminScripts')
 @endsection

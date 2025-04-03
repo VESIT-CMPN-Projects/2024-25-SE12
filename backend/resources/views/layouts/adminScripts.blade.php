@@ -1,68 +1,57 @@
+<!-- Load Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    fetch(window.location.pathname + '/chart-data')
-        .then(response => response.json())
-        .then(data => {
-            if (!data.length) {
-                console.warn('No chart data received');
-                return;
-            }
-            
-            const labels = data.map(item => item.month);
-            const values = data.map(item => item.total);
+    document.addEventListener("DOMContentLoaded", function() {
+        console.log("Chart script is running");
 
-            const ctx = document.getElementById('donationsChart');
-            if (ctx) {
-                new Chart(ctx.getContext('2d'), {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Donations ($)',
-                            data: values,
-                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            borderWidth: 1
-                        }]
+        const ctx = document.getElementById('donationsChart');
+
+        if (!ctx) {
+            console.error("Canvas element not found!");
+            return;
+        }
+
+        let donationsData = @json($donations);
+        if (!donationsData || donationsData.length === 0) {
+            console.warn("No donation data available");
+            return;
+        }
+
+        // Extract donor IDs and donation amounts
+        let labels = donationsData.map(d => `Donor #${d.id}`); // Use Donor ID as X-axis label
+        let donationAmounts = donationsData.map(d => d.amount);
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels, // Set donor IDs on X-axis
+                datasets: [{
+                    label: 'Donations ($)',
+                    data: donationAmounts,
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Donor ID' // Label for X-axis
+                        }
                     },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Amount ($)'
                         }
                     }
-                });
-            } else {
-                console.error('Chart element not found');
-            }
-        })
-        .catch(error => console.error('Error fetching chart data:', error));
-
-    // Event Form Validation
-    const eventForm = document.querySelector('#addEventModal form');
-    if (eventForm) {
-        eventForm.addEventListener('submit', function (e) {
-            const inputs = eventForm.querySelectorAll('input[required]');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.classList.add('is-invalid');
-                } else {
-                    input.classList.remove('is-invalid');
                 }
-            });
-            
-            if (!isValid) {
-                e.preventDefault();
-                alert('Please fill in all required fields');
             }
         });
-    }
-});
+    });
 </script>
