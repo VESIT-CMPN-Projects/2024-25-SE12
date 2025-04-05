@@ -251,7 +251,7 @@ main {
   <main>
         <div class="sidebar">
             <a href="#dashboard">Dashboard</a>
-            <a href="#events">Manage Events</a>
+            <a href="/admin/manage-events">Manage Events</a>
             <a href="#donations">Donations</a>
             <a href="#settings">Settings</a>
         </div>

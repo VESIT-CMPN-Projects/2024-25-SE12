@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\EventController;
 use App\Models\Donation;
 use App\Models\Contact;
 
@@ -71,5 +72,11 @@ Route::get('/admin', function () {
     $contacts = Contact::latest()->get();
     return view('admin', compact('donations', 'contacts'));
 });
+
+
+
+Route::get('/admin/manage-events', [EventController::class, 'index'])->name('events.index');
+Route::post('/admin/manage-events', [EventController::class, 'store'])->name('events.store');
+Route::delete('/admin/manage-events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
 
 
