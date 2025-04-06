@@ -485,8 +485,7 @@
                         driving sustainable waste management through weekly beach cleanups, conducting plantation and
                         restoration drives to save our saviors, and empowering underprivileged students through Project
                         Pathshala’s transformative art and craft education initiatives.</p>
-                    <button class="btn btn-custom me-2">View Our Projects →</button>
-                    <button class="btn btn-custom">Upcoming Events →</button>
+                    <button class="btn btn-custom me-2"><a href="/projects" style="color:black;text-decoration:none;">View Our Projects →</a></button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <img src="{{ asset ('assets/images/whatweDo-image1.jpg')}}" alt="Smiling children" class="img-fluid rounded">

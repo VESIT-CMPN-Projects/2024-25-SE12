@@ -5,6 +5,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EventController;
+use App\Models\Donation;
+use App\Models\Contact;
 
 // Route::get('/', function () {
 //     return view('homePage');
@@ -16,6 +19,10 @@ Route::get('/login', function () {
 
 Route::get('/team', function () {
     return view('ourTeam');
+});
+
+Route::get('/about', function () {
+    return view('aboutUs');
 });
 
 Route::get('/donateus', function () {
@@ -63,3 +70,17 @@ Route::get('/contact', function () {
 });
 
 Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
+
+Route::get('/admin', function () {
+    $donations = Donation::latest()->get();
+    $contacts = Contact::latest()->get();
+    return view('admin', compact('donations', 'contacts'));
+});
+
+
+
+Route::get('/admin/manage-events', [EventController::class, 'index'])->name('events.index');
+Route::post('/admin/manage-events', [EventController::class, 'store'])->name('events.store');
+Route::delete('/admin/manage-events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
+
+
