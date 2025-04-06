@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('homePage');
-})->name('home');
+// Route::get('/', function () {
+//     return view('homePage');
+// })->name('homePage');
 
 Route::get('/login', function () {
     return view('login');
@@ -39,6 +40,10 @@ Route::get('/donatenow', function () {
 
 // Handle login and signup
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('auth');
+
 
 Route::get('/admin', function () {
     return view('admin');
