@@ -84,11 +84,6 @@
         .text-center button {
             margin-right: 10px;
         }
-
-        .role-checkbox {
-            margin-top: 10px;
-            font-weight: bold;
-        }
 @endsection
 
 @section('content')
@@ -121,11 +116,6 @@
                                 <label class="form-label">Password</label>
                                 <input type="password" name="password" class="form-control" placeholder="Password" required>
                             </div>
-                            <div class="mb-3 role-checkbox">
-                                <label>Are you:</label>
-                                <input type="radio" name="role" value="admin" required> Admin
-                                <input type="radio" name="role" value="user" required> User
-                            </div>
                             <button type="submit" class="btn btn-warning w-100 auth-btn">Login</button>
                         </form>
                     </div>
@@ -154,11 +144,6 @@
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" required>
                                 <label class="form-check-label">I agree to terms and conditions</label>
-                            </div>
-                            <div class="mb-3 role-checkbox">
-                                <label>Are you:</label>
-                                <input type="radio" name="role" value="admin" required> Admin
-                                <input type="radio" name="role" value="user" required> User
                             </div>
                             <button type="submit" class="btn btn-warning w-100 auth-btn">Sign up</button>
                         </form>
